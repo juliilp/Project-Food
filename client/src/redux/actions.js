@@ -3,9 +3,7 @@ import axios from "axios";
 export const getRecipes = () => {
   return async function (dispatch) {
     try {
-      let response = await axios.get(
-        "https://project-food-production-1e24.up.railway.app/"
-      );
+      let response = await axios.get("/recipes");
       let response2 = response.data;
 
       dispatch({
@@ -24,9 +22,7 @@ export const getRecipes = () => {
 export const getNameRecipes = (name) => {
   return async (dispatch) => {
     try {
-      let response = await axios.get(
-        `http://localhost:3001/recipes?name=${name}`
-      );
+      let response = await axios.get(`/recipes?name=${name}`);
       let response2 = response.data;
 
       dispatch({
@@ -58,24 +54,21 @@ export const orderByHealthScore = (payload) => {
 
 // export const getDiets = (payload) => {
 //   return async (dispatch) => {
-//     const info = await axios.get("http://localhost:3001/diets", payload)
+//     const info = await axios.get("/diets", payload)
 //     return dispatch({type : "GET_DIETS", payload : info.data})
 //   }
 // }
 
 export const postRecipes = (payload) => {
   return async () => {
-    const infoPost = await axios.post(
-      "http://localhost:3001/recipes/",
-      payload
-    );
+    const infoPost = await axios.post("/recipes/", payload);
     return infoPost;
   };
 };
 
 export const getDetails = (id) => {
   return async (dispatch) => {
-    const getId = await axios.get(`http://localhost:3001/recipes/${id}`);
+    const getId = await axios.get(`/recipes/${id}`);
     return dispatch({
       type: "GET_DETAILS",
       payload: getId.data,
@@ -92,7 +85,7 @@ export function orderByScore(payload) {
 
 export function getDiets() {
   return async function (dispatch) {
-    const json = await axios.get("http://localhost:3001/diets");
+    const json = await axios.get("/diets");
     return dispatch({
       type: "GET_DIETS",
       payload: json.data,

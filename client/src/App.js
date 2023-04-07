@@ -1,23 +1,21 @@
-import './App.css';
-import {Route} from 'react-router-dom'
-import {useSelector} from 'react-redux'
-import Home from './componentes/Home/Home'
-import LandingPage from './componentes/LandingPage/LandingPage';
-import RecipeCreate from './componentes/recipeCreate/recipeCreate'
-import Detail from './componentes/Detail/Detail';
-
+import "./App.css";
+import { Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Home from "./componentes/Home/Home";
+import LandingPage from "./componentes/LandingPage/LandingPage";
+import RecipeCreate from "./componentes/recipeCreate/recipeCreate";
+import Detail from "./componentes/Detail/Detail";
+import axios from "axios";
+axios.defaults.baseURL = "https://project-food-production-1e24.up.railway.app/";
 function App() {
-  const allRecipes = useSelector((state) => state.recipes)
+  const allRecipes = useSelector((state) => state.recipes);
 
-  
   return (
     <div className="App">
-
-      <Route exact path='/Home' component={Home} />
-      <Route exact path='/' component={LandingPage} />
-      <Route exact path='/recipes/' component={RecipeCreate}   />
-      <Route exact path='/Home/:id' component={Detail}   />
-      
+      <Route exact path="/Home" component={Home} />
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/recipes/" component={RecipeCreate} />
+      <Route exact path="/Home/:id" component={Detail} />
     </div>
   );
 }
