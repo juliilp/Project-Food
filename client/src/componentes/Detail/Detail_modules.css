@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container_details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  background-color: rgb(230, 230, 220);
+}
+
+.card_detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.detail_titulo {
+  font-size: 20px;
+  margin: 15px 0px;
+  font-weight: 600;
+}
+.imagen_detail {
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.resumen_detail {
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.dietas_detail {
+  letter-spacing: 2px;
+}
+.button_detail {
+  margin: 20px 0px;
+  cursor: pointer;
+  padding: 7px 40px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: #ff7070;
+  font-weight: bold;
+}

@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container-landingpage {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 50px;
+  margin: auto;
+}
+
+.img-landingpage {
+  order: 1;
+  padding: 20px;
+  width: 295px;
+  height: 417px;
+  object-fit: cover;
+}
+
+.landing {
+  order: 2;
+}
+
+.tituloLandingpage {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+}
+
+.parrafoLandingpage {
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.buttonLandingpage {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 40px;
+  width: 260px;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #ff7070;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .tituloLandingpage {
+    width: 350px;
+  }
+
+  .parrafoLandingpage {
+    width: 350px;
+  }
+
+  .container-button-landingpage {
+    width: 350px;
+  }
+  .main-container-landingpage {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .container-imagen {
+    width: 50%;
+    height: 50vh;
+    order: 2;
+  }
+
+  .img-landingpage {
+    order: 1;
+    padding: 20px;
+    width: 350px;
+    height: 480px;
+    object-fit: cover;
+  }
+
+  .landing {
+    width: 50%;
+    order: 1;
+  }
+}
+
+@media (min-width: 950px) {
+  .main-container-landingpage {
+    padding: 0 100px;
+    justify-content: space-evenly;
+  }
+  .tituloLandingpage {
+    font-size: 2rem;
+  }
+
+  .parrafoLandingpage {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+
+  .img-landingpage {
+    width: 400px;
+    height: 530px;
+  }
+
+  .buttonLandingpage {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .main-container-landingpage {
+    padding: 0 150px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-container-landingpage {
+    padding: 0 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-container-landingpage {
+    padding: 0 150px;
+  }
+  .tituloLandingpage {
+    width: 450px;
+    font-size: 2.3rem;
+  }
+
+  .parrafoLandingpage {
+    width: 450px;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+
+  .container-imagen {
+    width: 50%;
+  }
+  .img-landingpage {
+    width: 450px;
+    height: 580px;
+  }
+
+  .container-button-landingpage {
+    width: 450px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .main-container-landingpage {
+    padding: 0 200px;
+  }
+}

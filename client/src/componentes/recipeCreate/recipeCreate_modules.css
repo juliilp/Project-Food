@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  border: none;
+}
+.recipeCreate_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(244, 244, 245);
+  height: 100vh;
+}
+
+.recipe_card_form_container {
+  width: 300px;
+}
+.container_label_input_create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_recipe_create {
+  width: 200px;
+  border: none;
+  padding: 3px 0;
+}
+
+.boton_create {
+  display: block;
+}
+.button_create_recipe {
+  margin: 5px auto;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 7px 40px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: #ff7070;
+  font-weight: bold;
+}

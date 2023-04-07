@@ -1,0 +1,17 @@
+.main-paginado {
+  margin: 25px;
+}
+
+.button_paginado {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.button_paginado:hover {
+  animation-delay: 1s;
+  transform: scale(1);
+  cursor: pointer;
+}
