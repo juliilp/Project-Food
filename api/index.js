@@ -22,7 +22,7 @@ const { conn } = require("./src/db.js");
 require("dotenv").config();
 console.log("Soy el console log del DB " + process.env.DB_PORT);
 
-const PORT = process.env.DB_PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 console.log(
   process.env.DB_USER,
