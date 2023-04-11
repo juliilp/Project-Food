@@ -85,10 +85,22 @@ const reducer = (state = initialState, action) => {
 
     case "FILTER_BY_TYPE_DIET":
       const showedRecipes = state.showedRecipes;
-      const filter =
-        action.payload === "all"
-          ? showedRecipes
-          : showedRecipes.filter((r) => r.diets.includes(action.payload));
+      let filter = [];
+
+      action.payload === "all"
+        ? (filter = showedRecipes)
+        : showedRecipes.forEach((r) =>
+            r.diets.forEach((e) => {
+              if (e.name.includes(action.payload)) {
+                filter.push(r);
+              }
+            })
+          );
+
+      //   state.showedRecipes.map((e) =>
+      //   e.diets.filter((g) => g.name.includes(action.payload))
+      // );
+      console.log(filter);
       return {
         ...state,
         recipes: filter,
