@@ -6,7 +6,7 @@ import LandingPage from "./componentes/LandingPage/LandingPage";
 import RecipeCreate from "./componentes/recipeCreate/recipeCreate";
 import Detail from "./componentes/Detail/Detail";
 import axios from "axios";
-axios.defaults.baseURL = "https://project-food-production.up.railway.app/";
+axios.defaults.baseURL = "https://food-app-9rbe.onrender.com/";
 function App() {
   const allRecipes = useSelector((state) => state.recipes);
 
