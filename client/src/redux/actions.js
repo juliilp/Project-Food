@@ -5,7 +5,7 @@ export const getRecipes = () => {
     try {
       let response = await axios.get("/recipes");
       let response2 = response.data;
-
+      console.log(response2);
       dispatch({
         type: "ALL_RECIPES",
         payload: response2,

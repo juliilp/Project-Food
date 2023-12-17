@@ -1,45 +1,36 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getDetails } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import s from "./Detail_modules.css";
-
+import axios from "axios";
 const Detail = (props) => {
   const { id } = useParams();
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.detail);
+  const [detailReceta, setDetailReceta] = useState();
   useEffect(() => {
-    dispatch(getDetails(id));
-  }, [dispatch]);
-
+    async function fetchReceta() {
+      const result = await axios(`/recipes/${id}`);
+      setDetailReceta(result.data);
+    }
+    fetchReceta();
+  }, []);
   return (
     <div className="container_details">
-      {data ? (
-        data.map((e) => (
-          <div className="card_detail">
-            <h1 className="detail_titulo">{e.name}</h1>
-            <img
-              src={e.image}
-              alt="imagen not found"
-              className="imagen_detail"
-            />
-            <h2 className="detail_titulo">Dish Summary</h2>
-            <p className="resumen_detail">
-              {e.dishSummary.replace(/<[^>]*>?/g, "")}
-            </p>
-            {/* <h2 className="detail_titulo">Suitable for vegans</h2>
-            {e.diets.map((e) => (
-              <span className="dietas_detail">
-                {e.name.replace(/^\w/, (c) => c.toUpperCase())}{" "}
-              </span>
-            ))} */}
-
-            <Link to="/home">
-              <button className="button_detail">Back to HOME</button>
-            </Link>
-          </div>
-        ))
+      {detailReceta ? (
+        <div className="card_detail">
+          <h1 className="detail_titulo">{detailReceta.name}</h1>
+          <img
+            src={detailReceta.image}
+            alt="imagen not found"
+            className="imagen_detail"
+          />
+          <h2 className="detail_titulo">Dish Summary</h2>
+          <p className="resumen_detail">
+            {detailReceta.dishSummary.replace(/<[^>]*>?/g, "")}
+          </p>
+          <Link to="/home">
+            <button className="button_detail">Back to HOME</button>
+          </Link>
+        </div>
       ) : (
         <p>Loading...</p>
       )}

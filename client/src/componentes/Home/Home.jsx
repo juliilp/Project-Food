@@ -63,6 +63,7 @@ const Home = () => {
     // setDiet(e.target.value)
   };
 
+  console.log(currentRecipes);
   return (
     <div className="main-container-home">
       <div className="navbar-home">
@@ -131,17 +132,18 @@ const Home = () => {
       <div>
         {/* Aca estaba el paginado  */}
         <div className="container-card">
-          {currentRecipes.map((recipe) => (
-            <Card
-              key={recipe.id}
-              name={recipe.name}
-              id={recipe.id}
-              image={recipe.image}
-              healthScore={recipe.healthScore}
-              diets={recipe.diets.map((e) => e.name + ", ")}
-              detail="Detail"
-            />
-          ))}
+          {currentRecipes.length > 0 &&
+            currentRecipes.map((recipe) => (
+              <Card
+                key={recipe._id}
+                name={recipe.name}
+                id={recipe._id}
+                image={recipe.image}
+                healthScore={recipe.healthScore}
+                diets={recipe.diets?.map((e) => e.name + ", ")}
+                detail="Detail"
+              />
+            ))}
         </div>
         <Paginado
           recipesPerPage={recipesPerPage}
