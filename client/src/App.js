@@ -8,6 +8,12 @@ import Detail from "./componentes/Detail/Detail";
 import axios from "axios";
 axios.defaults.baseURL = "https://food-app-9rbe.onrender.com";
 // axios.defaults.baseURL = "http://localhost:3001";
+axios.interceptors.request.use((config) => {
+  config.headers["Content-Type"] = "application/json";
+  config.headers["Access-Control-Allow-Origin"] = "*";
+  return config;
+});
+
 function App() {
   const allRecipes = useSelector((state) => state.recipes);
 
