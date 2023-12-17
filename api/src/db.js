@@ -13,7 +13,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 // APIKEY=
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+  "postgres://foodapp_database_user:OwXDqsil6nNz59rMBYvC1FOwFALhwyMT@dpg-ckmnnaq216ps73fislt0-a/foodapp_database",
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
