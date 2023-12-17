@@ -17,11 +17,7 @@ server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
 server.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://127.0.0.1:5173",
-      "https://project-food-two.vercel.app",
-    ],
+    origin: "https://project-food-two.vercel.app",
     credentials: true,
   })
 );
