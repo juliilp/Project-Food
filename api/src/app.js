@@ -21,6 +21,16 @@ server.use(
     credentials: true,
   })
 );
+
+server.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://project-food-two.vercel.app"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 server.use(morgan("dev"));
 server.use(express.json());
 
