@@ -12,7 +12,7 @@ const server = express();
 
 server.use(
   cors({
-    origin: ["https://project-food-two.vercel.app", "http://localhost:3000"],
+    origin: "*",
     credentials: true,
   })
 );
