@@ -15,7 +15,16 @@ server.name = "API";
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
-server.use(cors());
+server.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://127.0.0.1:5173",
+      "https://project-food-two.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 server.use(morgan("dev"));
 server.use(express.json());
 server.use((req, res, next) => {
