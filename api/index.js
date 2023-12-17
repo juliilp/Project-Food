@@ -24,14 +24,6 @@ console.log("Soy el console log del DB " + process.env.DB_PORT);
 
 const PORT = process.env.PORT || 3001;
 
-console.log(
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  process.env.DB_HOST,
-  process.env.DB_PORT,
-  process.env.DB_NAME,
-  process.env.APIKEY
-);
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
   server.listen(PORT, () => {

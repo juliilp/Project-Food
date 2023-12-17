@@ -6,7 +6,8 @@ import LandingPage from "./componentes/LandingPage/LandingPage";
 import RecipeCreate from "./componentes/recipeCreate/recipeCreate";
 import Detail from "./componentes/Detail/Detail";
 import axios from "axios";
-axios.defaults.baseURL = "https://food-app-9rbe.onrender.com/";
+axios.defaults.baseURL = "https://food-app-9rbe.onrender.com";
+// axios.defaults.baseURL = "http://localhost:3001";
 function App() {
   const allRecipes = useSelector((state) => state.recipes);
 

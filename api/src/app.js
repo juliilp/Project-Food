@@ -10,27 +10,18 @@ require("./db.js");
 
 const server = express();
 
+server.use(
+  cors({
+    origin: ["https://project-food-two.vercel.app", "http://localhost:3000"],
+    credentials: true,
+  })
+);
 server.name = "API";
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
-server.use(
-  cors({
-    origin: "https://project-food-two.vercel.app",
-    credentials: true,
-  })
-);
 
-server.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://project-food-two.vercel.app"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
 server.use(morgan("dev"));
 server.use(express.json());
 
